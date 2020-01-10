@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Cadastro {
+public class CadastroDeUsuario {
 	public static WebDriver driver;
 
 	public static void main(String[] args) throws Exception {
@@ -24,7 +24,7 @@ public class Cadastro {
 		WebElement element = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/login-modal/div/div/div[3]/a[2]")));
 		element.click();
-		driver.findElement(By.name("usernameRegisterPage")).sendKeys("Jose Pedro");
+		driver.findElement(By.name("usernameRegisterPage")).sendKeys("Marcoss");
 		driver.findElement(By.name("emailRegisterPage")).sendKeys("jose@rsi.com");
 		driver.findElement(By.name("passwordRegisterPage")).sendKeys("123aA");
 		driver.findElement(By.name("confirm_passwordRegisterPage")).sendKeys("123aA");
@@ -39,7 +39,6 @@ public class Cadastro {
 		driver.findElement(By.name("state_/_province_/_regionRegisterPage")).sendKeys("FJ");
 		driver.findElement(By.name("postal_codeRegisterPage")).sendKeys("00011-100");
 		driver.findElement(By.name("i_agree")).click();
-		Thread.sleep(1000);
 		driver.findElement(By.id("register_btnundefined")).sendKeys(Keys.ENTER);
 
 //		
