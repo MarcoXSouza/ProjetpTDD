@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.com.rsinet.hub_TDD.projeto.cadastro.PageObject.Cadastar;
+import br.com.rsinet.hub_TDD.projeto.PageObject.Cadastar;
 import br.com.rsinet.hub_TDD.projeto.utilitys.Constantes;
 
 public class CadastroDeUsuario {

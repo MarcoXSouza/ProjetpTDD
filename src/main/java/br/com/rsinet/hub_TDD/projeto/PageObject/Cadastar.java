@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_TDD.projeto.cadastro.PageObject;
+package br.com.rsinet.hub_TDD.projeto.PageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -56,7 +56,7 @@ public class Cadastar {
 		return element;
 	}
 	
-		
+	
 	
 
 
