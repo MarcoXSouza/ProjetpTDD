@@ -13,7 +13,7 @@ public class PesquisaPelaLupa {
 	public static WebDriver driver;
 	public static void main(String[] args) throws InterruptedException {
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
 		driver.get(Constantes.Url);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		Lupa.menu(driver).click();

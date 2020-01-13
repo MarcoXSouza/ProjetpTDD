@@ -1,9 +1,8 @@
 package br.com.rsinet.hub_TDD.projeto;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -17,6 +16,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class CadastroDeUsuarioTest {
 	WebDriver driver;
 
+	@Before
+	
 	@Test
 	public void shouldAnswerWithTrue() {
 		driver = new ChromeDriver();
