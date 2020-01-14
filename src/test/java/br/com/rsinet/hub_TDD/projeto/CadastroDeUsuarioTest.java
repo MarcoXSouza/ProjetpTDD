@@ -2,7 +2,8 @@ package br.com.rsinet.hub_TDD.projeto;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -13,38 +14,56 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CadastroDeUsuarioTest {
-	WebDriver driver;
+import br.com.rsinet.hub_TDD.projeto.PageObject.CadastarPage;
+import br.com.rsinet.hub_TDD.projeto.utilitys.Constantes;
+import br.com.rsinet.hub_TDD.projeto.utilitys.ExcelUtils;
 
-	@Before
+public class CadastroDeUsuarioTest {
+	public static WebDriver driver;
 	
-	@Test
-	public void shouldAnswerWithTrue() {
+//	@Rule
+
+	@BeforeClass
+	public static void Antes() throws Exception {
+		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Planilha1");
 		driver = new ChromeDriver();
-		WebDriverWait wait = new WebDriverWait(driver, 1);
 //		driver.manage().window().maximize();
-		driver.get("https://www.advantageonlineshopping.com/#/");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.id("menuUser")).click();
+		driver.get(Constantes.Url);
+	}
+
+	@Test
+	public void main() {
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+		CadastarPage.linkCadastro(driver).click();
 		WebElement element = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/login-modal/div/div/div[3]/a[2]")));
-		element.click();
-		driver.findElement(By.name("usernameRegisterPage")).sendKeys("Marcoss");
-		driver.findElement(By.name("emailRegisterPage")).sendKeys("jose@rsi.com");
-		driver.findElement(By.name("passwordRegisterPage")).sendKeys("123aA");
-		driver.findElement(By.name("confirm_passwordRegisterPage")).sendKeys("123aA");
-		driver.findElement(By.name("first_nameRegisterPage")).sendKeys("Marcos");
-		driver.findElement(By.name("last_nameRegisterPage")).sendKeys("Xavier");
-		driver.findElement(By.name("phone_numberRegisterPage")).sendKeys("12345678900");
+		element.sendKeys(Keys.ENTER);
+
+		CadastarPage.Nome(driver).sendKeys(ExcelUtils.getCellData(1, 0));
+		CadastarPage.email(driver).sendKeys(ExcelUtils.getCellData(1, 2));
+		CadastarPage.senha(driver).sendKeys(ExcelUtils.getCellData(1, 8));
+		CadastarPage.confirmarSenha(driver).sendKeys(ExcelUtils.getCellData(1, 8));
+		CadastarPage.primeiroNome(driver).sendKeys(ExcelUtils.getCellData(1, 0));
+		CadastarPage.ultimoNome(driver).sendKeys(ExcelUtils.getCellData(1, 1));
+		CadastarPage.telefone(driver).sendKeys(ExcelUtils.getCellData(1, 3));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Select oSelect = new Select(driver.findElement(By.name("countryListboxRegisterPage")));
 		oSelect.selectByVisibleText("Fiji");
-		driver.findElement(By.name("cityRegisterPage")).sendKeys("Lautoka");
-		driver.findElement(By.name("addressRegisterPage")).sendKeys("Vitogo Parade, 11");
-		driver.findElement(By.name("state_/_province_/_regionRegisterPage")).sendKeys("FJ");
-		driver.findElement(By.name("postal_codeRegisterPage")).sendKeys("00011-100");
+		CadastarPage.cidade(driver).sendKeys(ExcelUtils.getCellData(1, 4));
+		CadastarPage.endereco(driver).sendKeys(ExcelUtils.getCellData(1, 5));
+		CadastarPage.estado(driver).sendKeys(ExcelUtils.getCellData(1, 6));
+		CadastarPage.CEP(driver).sendKeys(ExcelUtils.getCellData(1, 7));
+
 		driver.findElement(By.name("i_agree")).click();
 		driver.findElement(By.id("register_btnundefined")).sendKeys(Keys.ENTER);
-		
+
+	}
+
+	@AfterClass
+	public static void closeBrowser() {
+		driver.quit();
 	}
 }

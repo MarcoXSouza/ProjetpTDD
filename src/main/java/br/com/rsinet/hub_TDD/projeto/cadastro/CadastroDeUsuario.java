@@ -19,9 +19,9 @@ public class CadastroDeUsuario {
 	public static WebDriver driver;
 
 	public static void main(String[] args) throws Exception {
-		
-		ExcelUtils.setExcelFile(Constantes.path + Constantes.file,"Planilha1");
-		
+
+		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Planilha1");
+
 		driver = new ChromeDriver();
 		WebDriverWait wait = new WebDriverWait(driver, 15);
 //		driver.manage().window().maximize();
@@ -40,9 +40,11 @@ public class CadastroDeUsuario {
 		CadastarPage.primeiroNome(driver).sendKeys(ExcelUtils.getCellData(1, 0));
 		CadastarPage.ultimoNome(driver).sendKeys(ExcelUtils.getCellData(1, 1));
 		CadastarPage.telefone(driver).sendKeys(ExcelUtils.getCellData(1, 3));
+
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Select oSelect = new Select(driver.findElement(By.name("countryListboxRegisterPage")));
 		oSelect.selectByVisibleText("Fiji");
+
 		CadastarPage.cidade(driver).sendKeys(ExcelUtils.getCellData(1, 4));
 		CadastarPage.endereco(driver).sendKeys(ExcelUtils.getCellData(1, 5));
 		CadastarPage.estado(driver).sendKeys(ExcelUtils.getCellData(1, 6));
@@ -50,7 +52,6 @@ public class CadastroDeUsuario {
 
 		driver.findElement(By.name("i_agree")).click();
 		driver.findElement(By.id("register_btnundefined")).sendKeys(Keys.ENTER);
-
 
 //		driver.close();
 	}

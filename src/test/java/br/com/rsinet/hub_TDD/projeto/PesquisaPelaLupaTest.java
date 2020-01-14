@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_TDD.projeto.pesquisa;
+package br.com.rsinet.hub_TDD.projeto;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import br.com.rsinet.hub_TDD.projeto.PageObject.LupaPage;
 import br.com.rsinet.hub_TDD.projeto.utilitys.Constantes;
 
-public class PesquisaPelaLupa {
+public class PesquisaPelaLupaTest {
 	public static WebDriver driver;
 
 	public static void main(String[] args) throws InterruptedException {
