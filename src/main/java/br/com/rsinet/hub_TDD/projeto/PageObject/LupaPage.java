@@ -20,7 +20,15 @@ public class LupaPage {
 		element = driver.findElement(By.linkText("HP ElitePad 1000 G2 Tablet"));
 		return element;
 	}
+	public static WebElement adicionaAoCarrinho(WebDriver driver) {
+		element = driver.findElement(By.name("save_to_cart"));
+		return element;
+	}
+	public static WebElement fazerCheckout(WebDriver driver) {
+		element = driver.findElement(By.id("checkOutPopUp"));
+		return element;
+	}	
 
-	
+
 	
 }

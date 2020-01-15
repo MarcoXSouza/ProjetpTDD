@@ -1,15 +1,30 @@
 package br.com.rsinet.hub_TDD.projeto.PageObject;
 
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CadastarPage {
+public class CadastroPage {
 	private static WebElement element = null;
+	public static WebDriver driver;
 
 	public static WebElement linkCadastro(WebDriver driver) {
 
 		element = driver.findElement(By.id("menuUser"));
+		return element;
+	}
+
+	public static WebElement pais(WebDriver driver) {
+
+		element = driver.findElement(By.name("countryListboxRegisterPage"));
 		return element;
 	}
 
@@ -65,6 +80,31 @@ public class CadastarPage {
 
 	public static WebElement CEP(WebDriver driver) {
 		element = driver.findElement(By.name("postal_codeRegisterPage"));
+		return element;
+	}
+
+	public static void takeSnapShot(String nomeDoArquivoImagem) throws Exception {
+		TakesScreenshot scrShot = ((TakesScreenshot) driver);
+		File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
+		String imageFileDir = "C:\\Users\\marcos.souza\\Pictures\\Testes\\Cadastro";
+		FileUtils.copyFile(srcFile, new File(imageFileDir, nomeDoArquivoImagem));
+
+	}
+
+	public static WebElement aceitarTermos(WebDriver driver) {
+		element = driver.findElement(By.name("i_agree"));
+		return element;
+	}
+
+	public static WebElement btnRegistrar(WebDriver driver) {
+		element = driver.findElement(By.id("register_btnundefined"));
+		return element;
+	}
+	public static WebElement criarConta(WebDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		WebElement waitElement = wait
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/login-modal/div/div/div[3]/a[2]")));
+		waitElement.sendKeys(Keys.ENTER);
 		return element;
 	}
 

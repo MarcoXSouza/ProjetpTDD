@@ -1,10 +1,8 @@
 package br.com.rsinet.hub_TDD.projeto.utilitys;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -13,7 +11,7 @@ public class ExcelUtils {
 	private static XSSFSheet excelWSheet;
 	private static XSSFWorkbook excelWorkbook;
 	private static XSSFCell cell;
-	private static XSSFRow row;
+//	private static XSSFRow row;
 
 	public static void setExcelFile(String path, String sheetName) throws Exception {
 		
