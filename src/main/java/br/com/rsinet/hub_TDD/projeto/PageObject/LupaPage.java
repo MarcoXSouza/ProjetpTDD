@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import br.com.rsinet.hub_TDD.projeto.utilitys.Constantes;
+import br.com.rsinet.hub_TDD.projeto.utilitys.ExcelUtils;
+
 public class LupaPage {
 	public static WebElement element = null;
 
@@ -16,8 +19,9 @@ public class LupaPage {
 		element = driver.findElement(By.id("autoComplete"));
 		return element;
 	}
-	public static WebElement tablet(WebDriver driver) {
-		element = driver.findElement(By.linkText("HP ElitePad 1000 G2 Tablet"));
+	public static WebElement produto(WebDriver driver) throws Exception {
+		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Lupa");
+		element = driver.findElement(By.linkText(ExcelUtils.getCellData(1, 0)));
 		return element;
 	}
 	public static WebElement adicionaAoCarrinho(WebDriver driver) {

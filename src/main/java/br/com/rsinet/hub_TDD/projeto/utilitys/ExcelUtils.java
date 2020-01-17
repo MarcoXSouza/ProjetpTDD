@@ -11,7 +11,6 @@ public class ExcelUtils {
 	private static XSSFSheet excelWSheet;
 	private static XSSFWorkbook excelWorkbook;
 	private static XSSFCell cell;
-//	private static XSSFRow row;
 
 	public static void setExcelFile(String path, String sheetName) throws Exception {
 		
@@ -41,37 +40,5 @@ public class ExcelUtils {
 
 	}
 
-//	public static void SetCellData(String result, int rowNum, int colNum) throws Exception {
-//
-//		try {
-//			row = excelWSheet.getRow(rowNum);
-//
-//			cell = row.getCell(colNum);
-//
-//			if (cell == null) {
-//
-//				cell = row.createCell(colNum);
-//
-//				cell.setCellValue(result);
-//
-//			} else {
-//
-//				cell.setCellValue(result);
-//
-//			}
-//
-//			FileOutputStream fileOut = new FileOutputStream(Constantes.path + Constantes.file);
-//
-//			excelWorkbook.write(fileOut);
-//
-//			fileOut.close();
-//
-//		} catch (Exception e) {
-//
-//			throw (e);
-//
-//		}
-//
-//	}
 
 }

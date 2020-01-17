@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\marcos.souza\AppData\Local\Temp\testng-eclipse--2125488071\testng-customsuite.xml</span>
+                    <span>C:\Users\marcos.souza\AppData\Local\Temp\testng-eclipse-1441076406\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="br.com.rsinet.hub_TDD.projeto.sucesso.CadastroDeUsuarioTest" hash-for-method="cadastraUsuario">cadastraUsuario</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="br.com.rsinet.hub_TDD.projeto.falha.CadastroDeUsuarioTestFalha1" hash-for-method="cadastraUsuario">cadastraUsuario</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -120,7 +120,7 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">br.com.rsinet.hub_TDD.projeto.sucesso.CadastroDeUsuarioTest</span>
+              <span class="class-name">br.com.rsinet.hub_TDD.projeto.falha.CadastroDeUsuarioTestFalha1</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -128,26 +128,8 @@
                   <a name="cadastraUsuario">
                   </a> <!-- cadastraUsuario -->
                   <span class="method-name">cadastraUsuario</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=79.0.3945.117)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;RSI1508&apos;, ip: &apos;10.1.0.60&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.117, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\MARCOS~1.SOU\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57155}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 772e7a1873022dbfede423157af26f1b
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
-	at br.com.rsinet.hub_TDD.projeto.sucesso.CadastroDeUsuarioTest.cadastraUsuario(CadastroDeUsuarioTest.java:58)
+                  <div class="stack-trace">java.lang.NullPointerException
+	at br.com.rsinet.hub_TDD.projeto.falha.CadastroDeUsuarioTestFalha1.cadastraUsuario(CadastroDeUsuarioTestFalha1.java:44)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -185,7 +167,7 @@ Session ID: 772e7a1873022dbfede423157af26f1b
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\marcos.souza\AppData\Local\Temp\testng-eclipse--2125488071\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\marcos.souza\AppData\Local\Temp\testng-eclipse-1441076406\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -194,7 +176,7 @@ Session ID: 772e7a1873022dbfede423157af26f1b
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;br.com.rsinet.hub_TDD.projeto.sucesso.CadastroDeUsuarioTest&quot;/&gt;
+      &lt;class name=&quot;br.com.rsinet.hub_TDD.projeto.falha.CadastroDeUsuarioTestFalha1&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -237,13 +219,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'cadastraUsuario')
-data.setCell(0, 2, 'br.com.rsinet.hub_TDD.projeto.sucesso.CadastroDeUsuarioTest')
-data.setCell(0, 3, 4696);
+data.setCell(0, 2, 'br.com.rsinet.hub_TDD.projeto.falha.CadastroDeUsuarioTestFalha1')
+data.setCell(0, 3, 4);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 4 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -269,21 +251,23 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">br.com.rsinet.hub_TDD.projeto.sucesso.CadastroDeUsuarioTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
+              <div class="chronological-class-name">br.com.rsinet.hub_TDD.projeto.falha.CadastroDeUsuarioTestFalha1</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
                 <span class="method-name">iniciaNavegador</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-class before -->
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">cadastraUsuario</span>
-                <span class="method-start">8353 ms</span>
+                <span class="method-start">10959 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
+              <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">fechaNavegador</span>
-                <span class="method-start">13058 ms</span>
-              </div> <!-- configuration-class after -->
+                <span class="method-start">10966 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
