@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoPelaTelaPrincipalTestFalha">
+      <class name="br.com.rsinet.hub_TDD.projeto.falha.PesquisaPelaLupaTestFalha">
         <methods>
-          <include name="compraLaptop"/>
           <include name="iniciaNavegador"/>
+          <include name="pesquisaPelaLupa"/>
           <include name="fechaNavegador"/>
         </methods>
-      </class> <!-- br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoPelaTelaPrincipalTestFalha -->
+      </class> <!-- br.com.rsinet.hub_TDD.projeto.falha.PesquisaPelaLupaTestFalha -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
