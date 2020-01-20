@@ -41,7 +41,7 @@ public class PesquisaPelaLupaTest {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		LupaPage.menu(driver).click();
 		LupaPage.digita(driver).sendKeys(ExcelData.nome + Keys.ENTER);
-		LupaPage.produto(driver).click();
+//		LupaPage.produto(driver).click();
 		LupaPage.adicionaAoCarrinho(driver).click();
 	
 

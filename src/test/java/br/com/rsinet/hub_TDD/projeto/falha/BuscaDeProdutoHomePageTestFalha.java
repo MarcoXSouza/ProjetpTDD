@@ -8,19 +8,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import br.com.rsinet.hub_TDD.projeto.PageObject.BuscaPage;
-import br.com.rsinet.hub_TDD.projeto.PageObject.LogIn;
-import br.com.rsinet.hub_TDD.projeto.utilitys.Constantes;
 import br.com.rsinet.hub_TDD.projeto.utilitys.DriverFactory;
-import br.com.rsinet.hub_TDD.projeto.utilitys.ExcelData;
-import br.com.rsinet.hub_TDD.projeto.utilitys.ExcelUtils;
 import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 
-public class BuscaDeProdutoPelaTelaPrincipalTestFalha {
+public class BuscaDeProdutoHomePageTestFalha {
 	public static WebDriver driver;
 
 	@BeforeClass
 	public static void iniciaNavegador() throws Exception {
-//		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Planilha1");
 		driver = DriverFactory.iniciaNavegador();
 	}
 
@@ -36,14 +31,10 @@ public class BuscaDeProdutoPelaTelaPrincipalTestFalha {
 
 	@Test
 	public void compraLaptop() {
-
 		BuscaPage.escolheLaptop(driver).click();
 		BuscaPage.clicaLaptop(driver).click();
 		BuscaPage.adicionaAoCarrinho(driver).click();
-		
 		BuscaPage.fazCheckout(driver).click();
-
-
 
 	}
 

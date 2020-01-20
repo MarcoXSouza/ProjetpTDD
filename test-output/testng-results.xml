@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17246" started-at="2020-01-20T12:06:19 BRT" finished-at="2020-01-20T12:06:37 BRT">
+  <suite name="Default suite" duration-ms="13368" started-at="2020-01-20T15:16:25 BRT" finished-at="2020-01-20T15:16:38 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17246" started-at="2020-01-20T12:06:19 BRT" finished-at="2020-01-20T12:06:37 BRT">
-      <class name="br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoPelaTelaPrincipalTestFalha">
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoPelaTelaPrincipalTestFalha@1dfe2924]" name="iniciaNavegador" is-config="true" duration-ms="10723" started-at="2020-01-20T12:06:19 BRT" finished-at="2020-01-20T12:06:30 BRT">
+    <test name="Default test" duration-ms="13368" started-at="2020-01-20T15:16:25 BRT" finished-at="2020-01-20T15:16:38 BRT">
+      <class name="br.com.rsinet.hub_TDD.projeto.falha.PesquisaPelaLupaTestFalha">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.PesquisaPelaLupaTestFalha@1dfe2924]" name="iniciaNavegador" is-config="true" duration-ms="10854" started-at="2020-01-20T15:16:25 BRT" finished-at="2020-01-20T15:16:36 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="compraLaptop()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoPelaTelaPrincipalTestFalha@1dfe2924]" name="compraLaptop" duration-ms="5495" started-at="2020-01-20T12:06:30 BRT" finished-at="2020-01-20T12:06:36 BRT">
+        <test-method status="PASS" signature="pesquisaPelaLupa()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.PesquisaPelaLupaTestFalha@1dfe2924]" name="pesquisaPelaLupa" duration-ms="1016" started-at="2020-01-20T15:16:36 BRT" finished-at="2020-01-20T15:16:37 BRT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- compraLaptop -->
-        <test-method status="PASS" signature="fechaNavegador()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoPelaTelaPrincipalTestFalha@1dfe2924]" name="fechaNavegador" is-config="true" duration-ms="989" started-at="2020-01-20T12:06:36 BRT" finished-at="2020-01-20T12:06:37 BRT">
+        </test-method> <!-- pesquisaPelaLupa -->
+        <test-method status="PASS" signature="fechaNavegador()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.PesquisaPelaLupaTestFalha@1dfe2924]" name="fechaNavegador" is-config="true" duration-ms="1467" started-at="2020-01-20T15:16:37 BRT" finished-at="2020-01-20T15:16:38 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fechaNavegador -->
-      </class> <!-- br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoPelaTelaPrincipalTestFalha -->
+      </class> <!-- br.com.rsinet.hub_TDD.projeto.falha.PesquisaPelaLupaTestFalha -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

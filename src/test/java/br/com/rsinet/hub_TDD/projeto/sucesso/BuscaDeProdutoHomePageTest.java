@@ -16,7 +16,7 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.DriverFactory;
 import br.com.rsinet.hub_TDD.projeto.utilitys.ExcelUtils;
 import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 
-public class BuscaDeProdutoPelaTelaPrincipalTest {
+public class BuscaDeProdutoHomePageTest {
 	public static WebDriver driver;
 
 	@BeforeMethod
