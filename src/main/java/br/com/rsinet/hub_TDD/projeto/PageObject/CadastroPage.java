@@ -1,19 +1,14 @@
 package br.com.rsinet.hub_TDD.projeto.PageObject;
 
-import java.io.File;
-
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CadastroPage {
-	private static WebElement element = null;
+	private static WebElement element;
 	public static WebDriver driver;
 
 	public static WebElement linkCadastro(WebDriver driver) {
@@ -83,13 +78,6 @@ public class CadastroPage {
 		return element;
 	}
 
-	public static void takeSnapShot(String nomeDoArquivoImagem) throws Exception {
-		TakesScreenshot scrShot = ((TakesScreenshot) driver);
-		File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		String imageFileDir = "C:\\Users\\marcos.souza\\Pictures\\Testes\\Cadastro";
-		FileUtils.copyFile(srcFile, new File(imageFileDir, nomeDoArquivoImagem));
-
-	}
 
 	public static WebElement aceitarTermos(WebDriver driver) {
 		element = driver.findElement(By.name("i_agree"));

@@ -7,7 +7,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import br.com.rsinet.hub_TDD.projeto.PageObject.AdicionaAoCarrinhoPage;
 import br.com.rsinet.hub_TDD.projeto.PageObject.BuscaPage;
 import br.com.rsinet.hub_TDD.projeto.PageObject.LogIn;
 import br.com.rsinet.hub_TDD.projeto.utilitys.Constantes;
@@ -19,33 +18,32 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 public class BuscaDeProdutoPelaTelaPrincipalTestFalha {
 	public static WebDriver driver;
 
-	@AfterClass
+	@BeforeClass
 	public static void iniciaNavegador() throws Exception {
-		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Planilha1");
-		DriverFactory.iniciaNavegador();
+//		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Planilha1");
+		driver = DriverFactory.iniciaNavegador();
 	}
 
-	@BeforeClass
+	@AfterClass
 	public static void fechaNavegador() throws Exception {
-		Snapshot.takeSnapShot("busca pela home.png", driver);
-		DriverFactory.fechaDriver();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//		String mensagem = driver.findElement(By.xpath("")).getText();
+//		Assert.assertFalse(mensagem.equals(""), "Falha");
+//		Snapshot.takeSnapShot("Cadastro falha - 1 ", driver);
+		Snapshot.takeSnapShot("Busca Falha ", driver);
+		DriverFactory.fechaDriver(driver);
 	}
 
 	@Test
 	public void compraLaptop() {
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
 
 		BuscaPage.escolheLaptop(driver).click();
 		BuscaPage.clicaLaptop(driver).click();
-		AdicionaAoCarrinhoPage.adicionaAoCarrinho(driver).click();
-		AdicionaAoCarrinhoPage.fazCheckout(driver).click();
+		BuscaPage.adicionaAoCarrinho(driver).click();
+		
+		BuscaPage.fazCheckout(driver).click();
 
-		LogIn.preencheNomeLogin(driver).sendKeys(ExcelData.nome);
-		LogIn.senhaLogin(driver).sendKeys(ExcelData.senha);
-		LogIn.botaoLogin(driver).click();
 
-		LogIn.proximaPag(driver).click();
 
 	}
 

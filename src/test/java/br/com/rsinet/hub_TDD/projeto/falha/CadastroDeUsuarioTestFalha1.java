@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -25,7 +27,8 @@ public class CadastroDeUsuarioTestFalha1 {
 	@BeforeMethod
 	public static void iniciaNavegador() throws Exception {
 		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Cadastro");
-		DriverFactory.iniciaNavegador();
+		
+		driver = DriverFactory.iniciaNavegador();
 	}
 
 	@AfterMethod
@@ -33,9 +36,13 @@ public class CadastroDeUsuarioTestFalha1 {
 		String mensagem = driver.findElement(By.xpath("//*[@id=\"registerPage\"]/article/sec-form/div[2]/label[1]"))
 				.getText();
 		System.out.println(mensagem);
-		Assert.assertTrue(mensagem.equals("User name already exists"), "Falha");
-		Snapshot.takeSnapShot("Cadastro falha - 1 ", driver);
-		DriverFactory.fechaDriver();
+		Assert.assertFalse(mensagem.equals("User name already exists"), "Usuario é igual");
+//		WebDriverWait wait = new WebDriverWait(driver, 5);
+//		WebElement element = driver.findElement(By.xpath("//*[@id=\\\"registerPage\\\"]/article/sec-form/div[2]/label[1]"));
+//		wait.until(ExpectedConditions.visibilityOf(element));
+		Thread.sleep(2000);
+		Snapshot.takeSnapShot("Cadastro falha ", driver);
+		DriverFactory.fechaDriver(driver);
 	}
 
 	@Test

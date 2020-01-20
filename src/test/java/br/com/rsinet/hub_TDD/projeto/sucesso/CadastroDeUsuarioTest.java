@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,24 +23,22 @@ public class CadastroDeUsuarioTest {
 	public static WebDriver driver;
 	WebElement element;
 
-//	@Rule
-
 	@BeforeMethod
 	public static void beforeMethod() throws Exception {
 		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Cadastro");
-		DriverFactory.iniciaNavegador();
+		driver = DriverFactory.iniciaNavegador();
 	}
 
 	@AfterMethod
 	public static void fechaNavegador() throws IOException, InterruptedException {
 
-		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.urlToBe("https://www.advantageonlineshopping.com/#/"));
 		String mensagem = driver.getCurrentUrl();
 		Assert.assertEquals("https://www.advantageonlineshopping.com/#/", mensagem);
 		Snapshot.takeSnapShot("Cadastro Sucesso ", driver);
-		System.out.println("Usuario cadastrado com sucesso!!!");
-
-		DriverFactory.iniciaNavegador();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		DriverFactory.fechaDriver(driver);
 	}
 
 	@Test

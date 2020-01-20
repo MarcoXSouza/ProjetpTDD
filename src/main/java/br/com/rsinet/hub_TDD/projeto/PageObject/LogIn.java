@@ -22,11 +22,5 @@ public class LogIn {
 		return element;
 	}
 
-	public static WebElement proximaPag(WebDriver driver) {
-		element = driver.findElement(By.id("next_btn"));
-		return element;
-	}
-	
-	
 
 }
