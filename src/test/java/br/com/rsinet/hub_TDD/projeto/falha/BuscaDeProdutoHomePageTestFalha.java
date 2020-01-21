@@ -2,7 +2,10 @@ package br.com.rsinet.hub_TDD.projeto.falha;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -22,9 +25,11 @@ public class BuscaDeProdutoHomePageTestFalha {
 	@AfterClass
 	public static void fechaNavegador() throws Exception {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//		String mensagem = driver.findElement(By.xpath("")).getText();
-//		Assert.assertFalse(mensagem.equals(""), "Falha");
-//		Snapshot.takeSnapShot("Cadastro falha - 1 ", driver);
+		String mensagem = driver.findElement(By.xpath("//*[@id=\"productProperties\"]/label")).getText();
+		Assert.assertTrue(mensagem.equals("Oops! We only have 10 in stock. We updated your order accordingly"),
+				"Quantidade excedida");
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scrollBy(0,250)", "");
 		Snapshot.takeSnapShot("Busca Falha ", driver);
 		DriverFactory.fechaDriver(driver);
 	}
@@ -33,8 +38,8 @@ public class BuscaDeProdutoHomePageTestFalha {
 	public void compraLaptop() {
 		BuscaPage.escolheLaptop(driver).click();
 		BuscaPage.clicaLaptop(driver).click();
+		BuscaPage.quantidade(driver).sendKeys("11");
 		BuscaPage.adicionaAoCarrinho(driver).click();
-		BuscaPage.fazCheckout(driver).click();
 
 	}
 

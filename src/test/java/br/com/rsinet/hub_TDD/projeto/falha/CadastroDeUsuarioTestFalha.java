@@ -25,8 +25,8 @@ public class CadastroDeUsuarioTestFalha {
 	@BeforeMethod
 	public static void iniciaNavegador() throws Exception {
 		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Cadastro");
-
 		driver = DriverFactory.iniciaNavegador();
+		
 	}
 
 	@AfterMethod
@@ -38,16 +38,13 @@ public class CadastroDeUsuarioTestFalha {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.textToBePresentInElement(
 				driver.findElement(By.xpath("//*[@id=\"registerPage\"]/article/sec-form/div[2]/label[1]")), "User name already exists"));
-//				
-//		Thread.sleep(2000);
-
 		Snapshot.takeSnapShot("Cadastro falha ", driver);
 		DriverFactory.fechaDriver(driver);
+		
 	}
-
+	
 	@Test
 	public void cadastraUsuario() {
-
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		CadastroPage.linkCadastro(driver).click();
 		CadastroPage.criarConta(driver);

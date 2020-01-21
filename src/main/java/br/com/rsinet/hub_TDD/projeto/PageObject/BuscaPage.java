@@ -28,5 +28,10 @@ public class BuscaPage {
 		return element;
 	}
 
+	public static WebElement quantidade(WebDriver driver) {
+		element = driver.findElement(By.name("quantity"));
+		return element;
+	}
+
 
 }
