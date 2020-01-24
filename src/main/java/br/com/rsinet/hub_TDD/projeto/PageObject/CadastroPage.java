@@ -12,13 +12,11 @@ public class CadastroPage {
 	public static WebDriver driver;
 
 	public static WebElement linkCadastro(WebDriver driver) {
-
 		element = driver.findElement(By.id("menuUser"));
 		return element;
 	}
 
 	public static WebElement pais(WebDriver driver) {
-
 		element = driver.findElement(By.name("countryListboxRegisterPage"));
 		return element;
 	}

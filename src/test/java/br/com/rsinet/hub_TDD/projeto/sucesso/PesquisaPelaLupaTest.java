@@ -11,6 +11,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import br.com.rsinet.hub_TDD.projeto.PageObject.LupaPage;
 import br.com.rsinet.hub_TDD.projeto.utilitys.Constantes;
 import br.com.rsinet.hub_TDD.projeto.utilitys.DriverFactory;
@@ -20,6 +24,8 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 
 public class PesquisaPelaLupaTest {
 	public static WebDriver driver;
+	ExtentReports extensao;
+	ExtentTest logger;
 
 	@BeforeClass
 	public static void antes() throws Exception {
@@ -44,7 +50,11 @@ public class PesquisaPelaLupaTest {
 //		LupaPage.produto(driver).click();
 		LupaPage.adicionaAoCarrinho(driver).click();
 	
-
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\");
+        extensao = new ExtentReports();
+        extensao.attachReporter(reporte);
+        logger = extensao.createTest("Lupa Sucesso!");
+		
 	}
 
 }

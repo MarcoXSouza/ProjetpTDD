@@ -12,6 +12,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import br.com.rsinet.hub_TDD.projeto.PageObject.CadastroPage;
 import br.com.rsinet.hub_TDD.projeto.utilitys.Constantes;
 import br.com.rsinet.hub_TDD.projeto.utilitys.DriverFactory;
@@ -21,6 +25,8 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 
 public class CadastroDeUsuarioTestFalha {
 	public static WebDriver driver;
+	ExtentReports extensao;
+	ExtentTest logger;   
 
 	@BeforeMethod
 	public static void iniciaNavegador() throws Exception {
@@ -63,6 +69,11 @@ public class CadastroDeUsuarioTestFalha {
 		CadastroPage.CEP(driver).sendKeys(ExcelData.cep);
 		CadastroPage.aceitarTermos(driver).click();
 		CadastroPage.btnRegistrar(driver).click();
+		
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\");
+        extensao = new ExtentReports();
+        extensao.attachReporter(reporte);
+        logger = extensao.createTest("CadastroFalha Realizado!");
 
 	}
 

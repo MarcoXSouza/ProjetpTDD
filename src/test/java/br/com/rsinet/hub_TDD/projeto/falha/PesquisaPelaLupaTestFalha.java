@@ -8,6 +8,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import br.com.rsinet.hub_TDD.projeto.PageObject.LupaPage;
 import br.com.rsinet.hub_TDD.projeto.utilitys.Constantes;
 import br.com.rsinet.hub_TDD.projeto.utilitys.DriverFactory;
@@ -17,7 +21,9 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 
 public class PesquisaPelaLupaTestFalha {
 	public static WebDriver driver;
-
+	ExtentReports extensao;
+	ExtentTest logger;  
+	
 	@BeforeMethod
 	public static void iniciaNavegador() throws Exception {
 		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Lupa");
@@ -38,7 +44,11 @@ public class PesquisaPelaLupaTestFalha {
 	public void pesquisaPelaLupa() throws Exception {
 		LupaPage.menu(driver).click();
 		LupaPage.digita(driver).sendKeys(ExcelData.ultimoNome + Keys.ENTER);
-
+		
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\");
+        extensao = new ExtentReports();
+        extensao.attachReporter(reporte);
+        logger = extensao.createTest("LupaFalha Realizado!");
 	}
 
 }

@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16849" started-at="2020-01-21T00:09:34 BRT" finished-at="2020-01-21T00:09:51 BRT">
+  <suite name="Default suite" duration-ms="17475" started-at="2020-01-24T13:43:06 BRT" finished-at="2020-01-24T13:43:23 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16849" started-at="2020-01-21T00:09:34 BRT" finished-at="2020-01-21T00:09:51 BRT">
+    <test name="Default test" duration-ms="17475" started-at="2020-01-24T13:43:06 BRT" finished-at="2020-01-24T13:43:23 BRT">
       <class name="br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoHomePageTestFalha">
-        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoHomePageTestFalha@1dfe2924]" name="iniciaNavegador" is-config="true" duration-ms="10864" started-at="2020-01-21T00:09:34 BRT" finished-at="2020-01-21T00:09:45 BRT">
+        <test-method status="PASS" signature="iniciaNavegador()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoHomePageTestFalha@68bbe345]" name="iniciaNavegador" is-config="true" duration-ms="10750" started-at="2020-01-24T13:43:06 BRT" finished-at="2020-01-24T13:43:17 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciaNavegador -->
-        <test-method status="PASS" signature="compraLaptop()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoHomePageTestFalha@1dfe2924]" name="compraLaptop" duration-ms="5430" started-at="2020-01-21T00:09:45 BRT" finished-at="2020-01-21T00:09:50 BRT">
+        <test-method status="PASS" signature="compraLaptop()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoHomePageTestFalha@68bbe345]" name="compraLaptop" duration-ms="5428" started-at="2020-01-24T13:43:17 BRT" finished-at="2020-01-24T13:43:22 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- compraLaptop -->
-        <test-method status="PASS" signature="fechaNavegador()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoHomePageTestFalha@1dfe2924]" name="fechaNavegador" is-config="true" duration-ms="530" started-at="2020-01-21T00:09:50 BRT" finished-at="2020-01-21T00:09:51 BRT">
+        <test-method status="PASS" signature="fechaNavegador()[pri:0, instance:br.com.rsinet.hub_TDD.projeto.falha.BuscaDeProdutoHomePageTestFalha@68bbe345]" name="fechaNavegador" is-config="true" duration-ms="1258" started-at="2020-01-24T13:43:22 BRT" finished-at="2020-01-24T13:43:23 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fechaNavegador -->
