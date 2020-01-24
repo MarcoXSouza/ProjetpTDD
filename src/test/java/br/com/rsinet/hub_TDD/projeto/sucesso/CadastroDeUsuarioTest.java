@@ -26,8 +26,8 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 public class CadastroDeUsuarioTest {
 	public static WebDriver driver;
 	WebElement element;
-	ExtentReports extensao;
-	ExtentTest logger;
+	static ExtentReports extensao;
+	static ExtentTest logger;
 
 	@BeforeMethod
 	public static void beforeMethod() throws Exception {
@@ -45,6 +45,7 @@ public class CadastroDeUsuarioTest {
 		Snapshot.takeSnapShot("Cadastro Sucesso ", driver);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		DriverFactory.fechaDriver(driver);
+		extensao.flush();
 	}
 
 	@Test
@@ -68,7 +69,7 @@ public class CadastroDeUsuarioTest {
 		CadastroPage.aceitarTermos(driver).click();
 		CadastroPage.btnRegistrar(driver).click();
 
-		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\");
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\Sucesso\\CadastroSucesso.html");
         extensao = new ExtentReports();
         extensao.attachReporter(reporte);
         logger = extensao.createTest("Cadastro com Sucesso!");

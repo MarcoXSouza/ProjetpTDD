@@ -20,8 +20,8 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 
 public class BuscaDeProdutoHomePageTestFalha {
 	public static WebDriver driver;
-	ExtentReports extensao;
-	ExtentTest logger;      
+	static ExtentReports extensao;
+	static ExtentTest logger;      
 
 	@BeforeClass
 	public static void iniciaNavegador() throws Exception {
@@ -38,6 +38,7 @@ public class BuscaDeProdutoHomePageTestFalha {
 		jse.executeScript("scrollBy(0,250)", "");
 		Snapshot.takeSnapShot("Busca Falha ", driver);
 		DriverFactory.fechaDriver(driver);
+		extensao.flush();
 	}
 
 	@Test
@@ -47,10 +48,10 @@ public class BuscaDeProdutoHomePageTestFalha {
 		BuscaPage.quantidade(driver).sendKeys("11");
 		BuscaPage.adicionaAoCarrinho(driver).click();
 		
-		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\");
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\BuscaFalha.html");
         extensao = new ExtentReports();
         extensao.attachReporter(reporte);
-        logger = extensao.createTest("BuscaFalha Realizado!");
+        logger = extensao.createTest("A Busca Falhou!!!");
 	}
 
 }

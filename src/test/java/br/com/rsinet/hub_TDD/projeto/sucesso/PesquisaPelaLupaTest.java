@@ -24,8 +24,8 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 
 public class PesquisaPelaLupaTest {
 	public static WebDriver driver;
-	ExtentReports extensao;
-	ExtentTest logger;
+	static ExtentReports extensao;
+	static ExtentTest logger;
 
 	@BeforeClass
 	public static void antes() throws Exception {
@@ -40,6 +40,7 @@ public class PesquisaPelaLupaTest {
 		Assert.assertFalse(mensagem.equals(ExcelData.nome), "Sucesso!");
 		Snapshot.takeSnapShot("Lupa Sucesso ", driver);
 		DriverFactory.fechaDriver(driver);
+		extensao.flush();
 	}
 
 	@Test
@@ -50,10 +51,11 @@ public class PesquisaPelaLupaTest {
 //		LupaPage.produto(driver).click();
 		LupaPage.adicionaAoCarrinho(driver).click();
 	
-		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\");
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\Sucesso\\LupaSucesso.html");
         extensao = new ExtentReports();
         extensao.attachReporter(reporte);
         logger = extensao.createTest("Lupa Sucesso!");
+        
 		
 	}
 

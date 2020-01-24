@@ -22,8 +22,8 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 
 public class BuscaDeProdutoHomePageTest {
 	public static WebDriver driver;
-	ExtentReports extensao;
-	ExtentTest logger;
+	static ExtentReports extensao;
+	static ExtentTest logger;
 
 	@BeforeMethod
 	public void beforeMethod() throws Exception {
@@ -39,6 +39,7 @@ public class BuscaDeProdutoHomePageTest {
 		Assert.assertTrue(mensagem.equals("1"), "Sucesso!");
 		Snapshot.takeSnapShot("Busca Sucesso ", driver);
 		DriverFactory.fechaDriver(driver);
+		extensao.flush();
 
 	}
 
@@ -48,7 +49,7 @@ public class BuscaDeProdutoHomePageTest {
 		BuscaPage.clicaLaptop(driver).click();
 		BuscaPage.adicionaAoCarrinho(driver).click();
 		
-		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\");
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\Sucesso\\BuscaSucesso.html");
         extensao = new ExtentReports();
         extensao.attachReporter(reporte);
         logger = extensao.createTest("Busca Sucesso!");

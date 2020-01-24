@@ -8,8 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -25,17 +25,17 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 
 public class CadastroDeUsuarioTestFalha {
 	public static WebDriver driver;
-	ExtentReports extensao;
-	ExtentTest logger;   
+	static ExtentReports extensao;
+	static ExtentTest logger;   
 
-	@BeforeMethod
+	@BeforeClass
 	public static void iniciaNavegador() throws Exception {
 		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Cadastro");
 		driver = DriverFactory.iniciaNavegador();
 		
 	}
 
-	@AfterMethod
+	@AfterClass
 	public static void fechaNavegador() throws IOException, InterruptedException {
 		String mensagem = driver.findElement(By.xpath("//*[@id=\"registerPage\"]/article/sec-form/div[2]/label[1]"))
 				.getText();
@@ -46,7 +46,7 @@ public class CadastroDeUsuarioTestFalha {
 				driver.findElement(By.xpath("//*[@id=\"registerPage\"]/article/sec-form/div[2]/label[1]")), "User name already exists"));
 		Snapshot.takeSnapShot("Cadastro falha ", driver);
 		DriverFactory.fechaDriver(driver);
-		
+		extensao.flush();
 	}
 	
 	@Test
@@ -70,10 +70,10 @@ public class CadastroDeUsuarioTestFalha {
 		CadastroPage.aceitarTermos(driver).click();
 		CadastroPage.btnRegistrar(driver).click();
 		
-		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\");
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\CadastroFalha.html");
         extensao = new ExtentReports();
         extensao.attachReporter(reporte);
-        logger = extensao.createTest("CadastroFalha Realizado!");
+        logger = extensao.createTest("Cadastro com Falha Realizado!");
 
 	}
 

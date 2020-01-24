@@ -21,14 +21,13 @@ import br.com.rsinet.hub_TDD.projeto.utilitys.Snapshot;
 
 public class PesquisaPelaLupaTestFalha {
 	public static WebDriver driver;
-	ExtentReports extensao;
-	ExtentTest logger;  
+	static ExtentReports extensao;
+	static ExtentTest logger;  
 	
 	@BeforeMethod
 	public static void iniciaNavegador() throws Exception {
 		ExcelUtils.setExcelFile(Constantes.path + Constantes.file, "Lupa");
 		driver = DriverFactory.iniciaNavegador();
-
 	}
 
 	@AfterMethod
@@ -37,6 +36,7 @@ public class PesquisaPelaLupaTestFalha {
 		Assert.assertFalse(mensagem.equals("No results for " + ExcelData.ultimoNome), "Falha, o item procurado não existe!");
 		Snapshot.takeSnapShot("Lupa Falha ", driver);
 		DriverFactory.fechaDriver(driver);
+		extensao.flush();
 
 	}
 
@@ -45,7 +45,7 @@ public class PesquisaPelaLupaTestFalha {
 		LupaPage.menu(driver).click();
 		LupaPage.digita(driver).sendKeys(ExcelData.ultimoNome + Keys.ENTER);
 		
-		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\");
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\Falha\\LupaFalha.html");
         extensao = new ExtentReports();
         extensao.attachReporter(reporte);
         logger = extensao.createTest("LupaFalha Realizado!");
