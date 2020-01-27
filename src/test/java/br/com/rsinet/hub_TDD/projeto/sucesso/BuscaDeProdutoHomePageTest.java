@@ -49,7 +49,7 @@ public class BuscaDeProdutoHomePageTest {
 		BuscaPage.clicaLaptop(driver).click();
 		BuscaPage.adicionaAoCarrinho(driver).click();
 		
-		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\Sucesso\\BuscaSucesso.html");
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("Report\\Sucesso\\BuscaSucesso.html");
         extensao = new ExtentReports();
         extensao.attachReporter(reporte);
         logger = extensao.createTest("Busca Sucesso!");

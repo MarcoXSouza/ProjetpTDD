@@ -16,7 +16,7 @@ public class Snapshot {
 	public static void takeSnapShot(String nomeDoArquivoImagem, WebDriver driver) throws IOException, InterruptedException {
 
 		File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		File dest = new File("C:\\Users\\marcos.souza\\Pictures\\Testes\\"+ nomeDoArquivoImagem + timestamp() + ".png");
+		File dest = new File("Report\\Screenshots\\"+ nomeDoArquivoImagem + timestamp() + ".png");
 		FileUtils.copyFile(scr, dest);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}

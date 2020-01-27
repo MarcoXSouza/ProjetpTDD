@@ -48,7 +48,7 @@ public class BuscaDeProdutoHomePageTestFalha {
 		BuscaPage.quantidade(driver).sendKeys("11");
 		BuscaPage.adicionaAoCarrinho(driver).click();
 		
-		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\BuscaFalha.html");
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("Report\\Falha\\BuscaFalha.html");
         extensao = new ExtentReports();
         extensao.attachReporter(reporte);
         logger = extensao.createTest("A Busca Falhou!!!");

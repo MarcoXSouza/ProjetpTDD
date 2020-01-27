@@ -45,7 +45,7 @@ public class PesquisaPelaLupaTestFalha {
 		LupaPage.menu(driver).click();
 		LupaPage.digita(driver).sendKeys(ExcelData.ultimoNome + Keys.ENTER);
 		
-		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\Falha\\LupaFalha.html");
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("Report\\Falha\\LupaFalha.html");
         extensao = new ExtentReports();
         extensao.attachReporter(reporte);
         logger = extensao.createTest("LupaFalha Realizado!");

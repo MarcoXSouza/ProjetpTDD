@@ -70,7 +70,7 @@ public class CadastroDeUsuarioTestFalha {
 		CadastroPage.aceitarTermos(driver).click();
 		CadastroPage.btnRegistrar(driver).click();
 		
-		ExtentHtmlReporter reporte = new ExtentHtmlReporter("C:\\Users\\marcos.souza\\Documents\\Marcos\\Java\\Marcos\\ProjetoAvaliacaoTDD\\workspace\\projeto\\Report\\CadastroFalha.html");
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("Report\\Falha\\CadastroFalha.html");
         extensao = new ExtentReports();
         extensao.attachReporter(reporte);
         logger = extensao.createTest("Cadastro com Falha Realizado!");
